@@ -1,34 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
+// Function to toggle the slider menu
+function toggleMenu() {
+  const slider = document.getElementById("slider");
+  const body = document.body;
+  const menuIcon = document.getElementById("menu-icon");
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sliding Menu</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-  <!-- Header with Logo and Menu Icon -->
-  <header>
-    <div id="logo">DALs</div>
-    <div id="menu-icon" onclick="toggleMenu()">&#9776;</div> <!-- Hamburger Menu Icon -->
-  </header>
-
-  <!-- The Sliding Menu -->
-  <div id="slider" class="slider">
-    <div id="close-btn" onclick="toggleMenu()">&times;</div> <!-- Close (Cross) Icon -->
-    <nav>
-      <ul>
-        <li><a href="#">Profile</a></li>
-        <li><a href="#">Help</a></li>
-        <li><a href="#">Support</a></li>
-        <li><a href="#">feedback</a></li>
-      </ul>
-    </nav>
-  </div>
-
-  <script src="script.js"></script>
-</body>
-
-</html>
+  // Check if the slider is open or closed and toggle accordingly
+  if (slider.style.right === "0px") {
+    // Close the menu
+    slider.style.right = "-100%";
+    body.classList.remove("slider-open");
+    menuIcon.innerHTML = "&#9776;"; // Hamburger icon
+  } else {
+    // Open the menu
+    slider.style.right = "0px";
+    body.classList.add("slider-open");
+    menuIcon.innerHTML = "&times;"; // Cross icon
+  }
+}
