@@ -1,0 +1,80 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and Background */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    padding: 0;
+    margin: 0;
+}
+
+/* Header Styling */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+}
+
+#logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#menu-icon {
+    font-size: 25px;
+    cursor: pointer;
+}    
+/* Sliding Menu */
+.slider {
+    position: fixed;
+    top: 0;
+    right: -100%; /* Initially hide the menu */
+    width: 80%; /* Takes 80% of the screen */
+    height: 100%;
+    background-color: #333;
+    transition: 0.3s; /* Slide transition */
+    color: white;
+    padding-top: 50px;
+    z-index: 1000;
+}
+
+.slider nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.slider nav ul li {
+    padding: 15px 0;
+}
+
+.slider nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    display: block;
+}
+
+/* Close Button */
+#close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 36px;
+    cursor: pointer;
+}
+
+/* Add a transition to the body background color when slider opens */
+body.slider-open {
+    background-color: rgba(0, 0, 0, 0.5); /* Darken background */
+}
+
